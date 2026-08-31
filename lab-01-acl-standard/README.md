@@ -4,7 +4,7 @@
 Restrict traffic from the 172.10.10.0/24 network (PC0's subnet) so it cannot reach the 172.10.13.0/24 network (PC2's subnet), while allowing all other traffic to pass normally.
 
 ## Topology
-![topology](screenshots/topology.png)
+![topology](topology.png)
 
 **Devices:**
 - Router0 (2811) — connects Switch0 (Net1), Switch1 (Net2), and Router1 (Net4)
@@ -14,10 +14,11 @@ Restrict traffic from the 172.10.10.0/24 network (PC0's subnet) so it cannot rea
 - PC2 — 172.10.13.2/16, gateway 172.10.13.1
 
 ## Key Configuration
-Router(config)#access-list 10 deny 172.10.10.0 0.0.0.255
-Router(config)#access-list 10 permit any
-Router(config)#interface f0/0
-Router(config-if)#ip access-group 10 out
+
+    Router(config)#access-list 10 deny 172.10.10.0 0.0.0.255
+    Router(config)#access-list 10 permit any
+    Router(config)#interface f0/0
+    Router(config-if)#ip access-group 10 out
 
 The ACL is applied outbound on Router1's f0/0 interface (facing Net3 / PC2), so only traffic sourced from 172.10.10.0/24 is blocked from reaching that network. All other traffic is permitted by the implicit `permit any` statement.
 
