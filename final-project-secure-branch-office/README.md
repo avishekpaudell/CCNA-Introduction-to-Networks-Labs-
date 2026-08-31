@@ -23,8 +23,9 @@ A branch office network build with VLSM-based subnetting, SSH-only remote manage
 
 This is a classic VLSM exercise: starting from a /24, the larger LAN (100 hosts) needs a /25 (126 usable hosts), and the smaller LAN (50 hosts) needs a /26 (62 usable hosts) carved out of the remaining space. Router-A's interfaces take the first usable address in each respective subnet.
 
-## Key Configuration
+See [`vlsm-subnetting.xlsx`](./vlsm-subnetting.xlsx) for the full VLSM subnet breakdown.
 
+## Key Configuration
 **Router-A — Base Hardening:**
 
     Router(config)#no ip domain-lookup
