@@ -32,5 +32,4 @@ The ACL is applied outbound on Router1's f0/0 interface (facing Net3 / PC2), so 
 - Applying ACLs to an interface (in vs. out)
 - Understanding the implicit deny and the need for an explicit `permit any`
 
-## Notes / Things to Improve
-- Standard ACLs filter by source only and should generally be placed close to the destination — this lab reinforces why the ACL was placed on Router1 (near Net3) rather than Router0.
+
